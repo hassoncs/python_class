@@ -95,12 +95,8 @@ def player1_turn():
         possible_choices.remove(choice)
         print possible_choices
         valid = True
-    except NameError:
-      print "That's not a valid integer"
-    except ValueError:
-      print "That's not a valid integer"
-    except TypeError:
-      print "That's not a valid integer"
+    except(NameError, ValueError, TypeError, SyntaxError):
+      print "That's not a valid option"
 
 def player2_turn():
     valid = False
@@ -116,13 +112,7 @@ def player2_turn():
           possible_choices.remove(choice)
           print possible_choices
           valid = True
-      except NameError:
-        print "That's not a valid option"
-      except ValueError:
-        print "That's not a valid option"
-      except TypeError:
-        print "That's not a valid option"
-      except SyntaxError:
+      except(NameError, ValueError, TypeError, SyntaxError):
         print "That's not a valid option"
 
 player1_turn()
