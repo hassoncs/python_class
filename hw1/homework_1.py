@@ -82,29 +82,48 @@ print""
 print "We use 'input' for choice as these are integers"
 # def player1_turn
 def player1_turn():
-  choice = input(player1 + ", choose between 1 and 9 (and not one that has already been picked)")
-  if choice not in possible_choices:
-    print "That isn't a valid option"
-    player1_turn()
-  else:
-    boxes[choice - 1] = "x"
-    print "You chose ", choice
-    print board % tuple(boxes)
-    possible_choices.remove(choice)
-    print possible_choices
-
+  valid = False
+  while valid == False:
+    try:
+      choice = input(player1 + ", choose between 1 and 9 (and not one that has already been picked)")
+      if choice not in possible_choices:
+        print "That isn't a valid option"
+      else:
+        boxes[choice - 1] = "x"
+        print "You chose ", choice
+        print board % tuple(boxes)
+        possible_choices.remove(choice)
+        print possible_choices
+        valid = True
+    except NameError:
+      print "That's not a valid integer"
+    except ValueError:
+      print "That's not a valid integer"
+    except TypeError:
+      print "That's not a valid integer"
 
 def player2_turn():
-  choice = input(player2 + ", choose between 1 and 9 (and not one that has already been picked)")
-  if choice not in possible_choices:
-    print "That isn't a valid option"
-    player2_turn()
-  else:
-    boxes[choice - 1] = "o"
-    print "You chose ", choice
-    print board % tuple(boxes)
-    possible_choices.remove(choice)
-    print possible_choices
+    valid = False
+    while valid == False:
+      try:
+        choice = input(player2 + ", choose between 1 and 9 (and not one that has already been picked)")
+        if choice not in possible_choices:
+          print "That isn't a valid option"
+        else:
+          boxes[choice - 1] = "o"
+          print "You chose ", choice
+          print board % tuple(boxes)
+          possible_choices.remove(choice)
+          print possible_choices
+          valid = True
+      except NameError:
+        print "That's not a valid option"
+      except ValueError:
+        print "That's not a valid option"
+      except TypeError:
+        print "That's not a valid option"
+      except SyntaxError:
+        print "That's not a valid option"
 
 player1_turn()
 player2_turn()

@@ -1,3 +1,14 @@
+#Joel Shooster
+#HW 1 - Rock Paper Scissors
+#Date: 5/9/2016
+#rps.py
+
+print "Name: Joel Shooster"
+print "Section: HW 1 - Rock Paper Scissors"
+print "Date: 5/9/2016"
+print "rps.py"
+
+#This is rock/paper/scissors
 print"Welcome to Rock / Paper / Scissors! Such a fun game!\n"
 
 player_one = raw_input("Player 1 name?: ")
