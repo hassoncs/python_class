@@ -9,7 +9,7 @@
 
 # Define your rock paper scissors function here
 ##### YOUR CODE HERE #####
-
+print "Let's place rock, paper, scissors again!\n"
 player_one = raw_input("Player 1 name?: ")
 print "Welcome, ", player_one
 print""
@@ -53,9 +53,11 @@ def rps(user1, user2):
 
 # Test Cases for Exercise 3.1
 ##### YOUR CODE HERE #####
-
+print "rps ('rock', 'paper')"
 rps("rock", "paper") #Player two wins
+print "\nrps ('scissors', 'paper')"
 rps("scissors", "paper") #Player one wins
+print "\nrps ('car', 'rock')"
 rps("car", "rock") #Those aren't valid options!
 print""
 # *********** Exercise 3.2 ***********
@@ -63,13 +65,13 @@ import math
 import random
 ## 1 - multadd function
 def multadd(a,b,c):
-  return a * b + c
+  return a*b + c
 
-print"1+2 * 3"
+print"multadd => 1*2 + 3"
 print multadd(1,2,3) # =>5
-print"\n2+2 * 2"
+print"\nmultadd => 2*2 + 2"
 print multadd(2,2,2) # =>6
-print"\n5+10 * 15"
+print"\nmultadd => 5*10 + 15"
 print multadd(5,10,15) # => 65
 print ""
 
@@ -80,12 +82,14 @@ sin = math.sin
 cos = math.cos
 pi = math.pi
 
+print"Angle test:"
 angle_test = multadd(cos(pi/4),1.0/2,sin(pi/4))
 print "sin(pi/4) + cos(pi/4)/2 is:"
-print angle_test,
+print angle_test
 
-ceiling_test = multadd(math.log(144),1.0/math.log(7),math.ceil(276.0/19))
-print "\nceiling(276/19) + 2 log_7(12) is:"
+print"\nCeiling test:"
+ceiling_test = multadd(1,math.ceil(276/19.0),2*math.log(12,7))
+print "ceiling(276/19) + 2 log_7(12) is:"
 print ceiling_test
 print""
 
@@ -120,6 +124,8 @@ rand_divis_3()
 ## 2 - roll_dice function - remember that a die's lowest number is 1;
                             #its highest is the number of sides it has
 
+# a = numbers of sides
+# b = times we roll the dice
 def roll_dice(a,b):
   count = b
   print "\nRolling a %d sided dice, %d times" % (a, b)
