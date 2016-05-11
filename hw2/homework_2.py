@@ -82,11 +82,12 @@ pi = math.pi
 
 angle_test = multadd(cos(pi/4),1.0/2,sin(pi/4))
 print "sin(pi/4) + cos(pi/4)/2 is:"
-print angle_test
+print angle_test,
 
 ceiling_test = multadd(math.log(144),1.0/math.log(7),math.ceil(276.0/19))
-print "ceiling(276/19) + 2 log_7(12) is:"
+print "\nceiling(276/19) + 2 log_7(12) is:"
 print ceiling_test
+print""
 
 ## 3 - yikes function
 def yikes(n):
@@ -97,7 +98,7 @@ def yikes(n):
 
 # Test Cases
 x = 5
-print "yikes(5) =", yikes(x)
+print "yikes(5) =", yikes(x), "\n"
 
 # ********** Exercise 3.3 **********
 
@@ -106,9 +107,9 @@ def rand_divis_3():
   num = random.randint(0,10000)
   print "Randomly chosen from 0 - 10000: ", num
   if num%3 ==0:
-    print "Divisible by three!"
+    print "Divisible by three!\n"
   else:
-    print "Not divisible by three :-("
+    print "Not divisible by three :-(\n"
 
 
 # Test Cases
