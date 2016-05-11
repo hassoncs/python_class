@@ -65,19 +65,27 @@ def pig_latin():
 pig_latin()
 
 # **********  EXTRA! Optional Part 2 *********
+#This helps us find how many elements in a list are integers
+print "\nList Comprehension Challenges"
+print "\n2.1 Find integers in list"
+def find_ints(n):
+    print [x for x in n if isinstance(x, int)]
 
-def find_instances(n):
-    integers = False
-    for x in n:
-        if isinstance(x,int) == True:
-            integers = integers + 1
-    if integers > 0:
-        print "\nWe have integers!"
-    else:
-        print "\nNo ints in this list."
-    print "Integers: %d" % integers +""
+find_ints(["Hello"])
+find_ints([12345])
+find_ints(["Hello", 12345, 4938, 23423, 0, "LOL"])
+print"\n"
 
-find_instances(["Hello"])
-find_instances([12345])
-find_instances(["Hello", 12345, 4938, 23423, 0, "LOL"])
+#2.2
+print"\n2.2\n"
+x = [num for num in range(-5,6)]
+y = [num for num in range(0,11)]
+print [[i, i**2+1] for i in x if i**2+1 in y ]
+
+#2.3
+print "\n2.3\n"
+radius = 5
+print [[i, radius**2 - i**2] for i in x if radius**2 - i**2 in y ]
+
+
 
