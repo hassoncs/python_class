@@ -187,7 +187,7 @@ print "\nNow let's break this"
 changeEntry(myBook, "Clinton,Bill", "phoneNumber", "1-222-555-9999")
 
 print "\nNow let's add a new value. Elon Musk"
-changeEntry(myBook, "Musk,Elon", "newEntry", "555-123-4567, elon@tesla.com")
+changeEntry(myBook, "Musk,Elon", "newEntry", "['555-123-4567', 'elon@tesla.com']")
 print "myBook['Musk,Elon'] =>", myBook["Musk,Elon"]
 
 print "\nSee his name in the index: ", myBook.keys()
