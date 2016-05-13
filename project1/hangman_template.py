@@ -136,6 +136,7 @@ def play_hangman():
             mistakes_made = mistakes_made + 1
         if mistakes_made == 6:
             print "Game Over! You lost!"
+            print "The correct answer was: %s" % secret_word
             game_over = True
         if word_guessed() == True:
             game_over = True
