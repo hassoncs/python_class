@@ -25,16 +25,13 @@ def get_num():
         valid = True
       elif num == 0:
         print "Zero? Really?"
+      elif num == 1:
+        print "Gotta be higher than 1."
       else:
         print "Negative number. Tsk tsk... "
-    except NameError:
+    except (NameError, TypeError, ValueError, SyntaxError):
       print "That's not a valid integer"
-    except ValueError:
-      print "That's not a valid integer"
-    except TypeError:
-      print "That's not a valid integer"
-    except SyntaxError:
-      print "That's not a valid integer"
+
 
 def countdown(n):
   while n > 0:
@@ -47,6 +44,7 @@ def get_exp_and_base():
   valid = False
   while valid == False:
     try:
+      print "\nLet's do an exponent."
       base = input("What is your base? : ")
       exp = input("What is your exponent? : ")
       if (base > 0) & (exp > 0):
@@ -55,15 +53,8 @@ def get_exp_and_base():
         print "Zero? Really?"
       else:
         print "Negative number. Tsk tsk... "
-    except NameError:
-      print "That's not a valid integer"
-    except ValueError:
-      print "That's not a valid integer"
-    except TypeError:
-      print "That's not a valid integer"
-    except SyntaxError:
-      print "That's not a valid integer"
-
+    except (NameError, ValueError, TypeError, SyntaxError):
+        print "That's not a valid integer"
   #This is our FOR logic here!
   for x in xrange(1,base + 1):
     print x, " ** %d =" % exp, x ** exp
@@ -84,13 +75,7 @@ def div_by_two():
         print "Ummm.. NO!"
       else:
         print "Really? A negative number?"
-    except NameError:
-      print "That's not a valid integer"
-    except ValueError:
-      print "That's not a valid integer"
-    except TypeError:
-      print "That's not a valid integer"
-    except SyntaxError:
+    except (NameError, ValueError, TypeError, SyntaxError):
       print "That's not a valid integer"
 
 #Call our functions
