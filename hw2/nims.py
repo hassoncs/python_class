@@ -27,7 +27,7 @@ def play_nims(pile, max_stones):
   while pile > 0:
     vaild1 = False
     while valid1 == False :
-      one_turn = input("\nPlayer 1. How many stones will you take? (Choose between 1 and %d)" %max_stones)
+      one_turn = input("\nPlayer 1. How many stones will you take? (Choose between 1 and %d):\n" % max_stones)
       if (one_turn <= max_stones) & (one_turn >=1):
         pile = pile - one_turn
         valid1 = True
@@ -38,7 +38,7 @@ def play_nims(pile, max_stones):
 
     valid2 = False
     while valid2 == False:
-      two_turn = input("\nPlayer 2. How many stones will you take? (Choose between 1 and %d)" % max_stones)
+      two_turn = input("\nPlayer 2. How many stones will you take? (Choose between 1 and %d):\n" % max_stones)
       if (two_turn <= max_stones) & (two_turn >=1):
         pile = pile - two_turn
         valid2 = True

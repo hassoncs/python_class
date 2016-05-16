@@ -40,8 +40,8 @@ Examples include strings, tuples, bytes, booleans, frozen sets, integers, floats
 
 #Examples
 me = ("Joel")
-print "Me = ('Joel')"
-print "Me is a tuple. I can't say me[1] = ' Shooster'"
+print "me = ('Joel')"
+print "me is a tuple. I can't say me[1] = ' Shooster'"
 print "However, I can say me = me + ' Shooster'"
 me += " Shooster"
 print "That would return:", me #Expect Joel
@@ -50,7 +50,7 @@ print "That would return:", me #Expect Joel
 
 # **********  Exercise 5.3 **********
 import math
-print "\n\nBall Collision:\n"
+print "\nBall Collision:\n"
 def ball_collide(ball1, ball2):
     '''
     Computes whether or not two balls are colliding
@@ -132,7 +132,7 @@ print_classes("Trump", my_classes)
 
 # **********  Exercise 5.5 **********
 
-def buildAddrBook(fileName):
+def build_addr_book(fileName):
     address_book = {}
     try:
         addresses = open(fileName, "r")
@@ -146,49 +146,49 @@ def buildAddrBook(fileName):
     except (IOError, ValueError):
         print "This file was not found."
 
-myBook = buildAddrBook("rawAddresses.csv")
+my_book = build_addr_book("rawAddresses.csv")
 
 
-def changeEntry(addrBook, entry, field, newValue):
-    addrBook_keys = addrBook.keys()
+def change_entry(addr_book, entry, field, newValue):
+    addr_book_keys = addr_book.keys()
     if field == "newEntry":
-        addrBook[entry] = newValue
-    elif entry not in addrBook_keys:
+        addr_book[entry] = newValue
+    elif entry not in addr_book_keys:
         print "This entry does not exist. Try again."
     elif field == "name":
-        value = addrBook[entry]
-        del addrBook[entry]
-        addrBook[newValue] = value
+        value = addr_book[entry]
+        del addr_book[entry]
+        addr_book[newValue] = value
     elif field == "phoneNumber":
-        addrBook[entry][0] = newValue
+        addr_book[entry][0] = newValue
     elif field == "emailAddress":
-        addrBook[entry].append(newValue)
+        addr_book[entry].append(newValue)
     else:
         print "That field does not exist."
-    # print "\nChanges made:\n", newValue, ": ", addrBook[newValue]
+    # print "\nChanges made:\n", newValue, ": ", addr_book[newValue]
 
 #Let's find Barack Obama
 print "\nBarack Obama's information:"
-print "printing myBook['Obama,Barack']\n"
-print myBook["Obama,Barack"]
+print "printing my_book['Obama,Barack']\n"
+print my_book["Obama,Barack"]
 
-changeEntry(myBook, "Obama,Barack", "name", "Clinton,Hillary")
-print myBook.keys()
+change_entry(my_book, "Obama,Barack", "name", "Clinton,Hillary")
+print my_book.keys()
 
 print "\nBarack Obama has been replaced by Hillary Clinton. Now let's add her email!"
-changeEntry(myBook, "Clinton,Hillary", "emailAddress", "hillary@us.gov")
-print "UPDATE - Hillary Clinton: ", myBook["Clinton,Hillary"]
+change_entry(my_book, "Clinton,Hillary", "emailAddress", "hillary@us.gov")
+print "UPDATE - Hillary Clinton: ", my_book["Clinton,Hillary"]
 
 print "\nNow her phone number:"
-changeEntry(myBook, "Clinton,Hillary", "phoneNumber", "1-222-555-9999")
-print "UPDATE - Hillary Clinton: ", myBook["Clinton,Hillary"]
+change_entry(my_book, "Clinton,Hillary", "phoneNumber", "1-222-555-9999")
+print "UPDATE - Hillary Clinton: ", my_book["Clinton,Hillary"]
 
-print "\nNow let's break this"
-changeEntry(myBook, "Clinton,Bill", "phoneNumber", "1-222-555-9999")
+print "\nNow let's break this by putting change_entry with 'Clinton, Bill' as our entry"
+change_entry(my_book, "Clinton,Bill", "phoneNumber", "1-222-555-9999")
 
 print "\nNow let's add a new value. Elon Musk"
-changeEntry(myBook, "Musk,Elon", "newEntry", "['555-123-4567', 'elon@tesla.com']")
-print "myBook['Musk,Elon'] =>", myBook["Musk,Elon"]
+change_entry(my_book, "Musk,Elon", "newEntry", "['555-123-4567', 'elon@tesla.com']")
+print "my_book['Musk,Elon'] =>", my_book["Musk,Elon"]
 
-print "\nSee his name in the index: ", myBook.keys()
+print "\nSee Elon and Hillary in the index: ", my_book.keys()
 

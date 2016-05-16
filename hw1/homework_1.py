@@ -33,7 +33,7 @@ board = """
          %s | %s | %s
 """
 
-print board % tuple(boxes)
+print board % tuple (boxes)
 
 
 print "For fun, let's change those box variables and see what happens when we run board again."
